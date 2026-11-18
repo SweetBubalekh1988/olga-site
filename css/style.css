@@ -7,7 +7,13 @@ body {
     color: #2c2c2c;
     line-height: 1.6;
     background: #fff;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Запрещаем горизонтальную прокрутку */
+    width: 100%;
+}
+
+img, svg {
+    max-width: 100%;
+    height: auto;
 }
 
 h1, h2, h3, .logo {
@@ -18,6 +24,7 @@ h1, h2, h3, .logo {
     max-width: 1140px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
 }
 
 .accent { color: #E87A3E; }
@@ -36,6 +43,7 @@ h1, h2, h3, .logo {
     position: relative;
     overflow: hidden;
     text-align: center;
+    max-width: 100%;
 }
 .btn--primary {
     background: #E87A3E;
@@ -70,6 +78,7 @@ h1, h2, h3, .logo {
     top: 0;
     z-index: 100;
     transition: all 0.3s ease;
+    width: 100%;
 }
 .header.scrolled {
     padding: 10px 0;
@@ -79,6 +88,7 @@ h1, h2, h3, .logo {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 .logo {
     color: #fff;
@@ -163,6 +173,7 @@ h1, h2, h3, .logo {
     padding: 100px 0;
     position: relative;
     overflow: hidden;
+    width: 100%;
 }
 .hero::before {
     content: '';
@@ -180,8 +191,9 @@ h1, h2, h3, .logo {
     gap: 40px;
     position: relative;
     z-index: 1;
+    width: 100%;
 }
-.hero__text { flex: 1; }
+.hero__text { flex: 1; min-width: 0; }
 .hero__text h1 {
     font-size: 48px;
     color: #1F3A5F;
@@ -194,7 +206,7 @@ h1, h2, h3, .logo {
     margin-bottom: 30px;
     color: #444;
 }
-.hero__img { flex: 1; display: flex; justify-content: center; align-items: center; }
+.hero__img { flex: 1; display: flex; justify-content: center; align-items: center; min-width: 0; }
 
 /* Стили для фото Ольги */
 .hero__photo {
@@ -226,6 +238,7 @@ h1, h2, h3, .logo {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 30px;
+    width: 100%;
 }
 .card {
     background: #fff;
@@ -234,6 +247,7 @@ h1, h2, h3, .logo {
     box-shadow: 0 10px 30px rgba(0,0,0,0.06);
     transition: all 0.4s ease;
     border: 1px solid #f0f0f0;
+    width: 100%;
 }
 .card:hover {
     transform: translateY(-8px);
@@ -258,6 +272,7 @@ h1, h2, h3, .logo {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 30px;
+    width: 100%;
 }
 .step {
     text-align: center;
@@ -296,6 +311,7 @@ h1, h2, h3, .logo {
     color: #fff;
     position: relative;
     overflow: hidden;
+    width: 100%;
 }
 .results__grid {
     display: grid;
@@ -304,6 +320,7 @@ h1, h2, h3, .logo {
     text-align: center;
     position: relative;
     z-index: 1;
+    width: 100%;
 }
 .result__num {
     display: block;
@@ -322,6 +339,7 @@ h1, h2, h3, .logo {
     padding: 100px 0;
     background: #fff;
     text-align: center;
+    width: 100%;
 }
 .reviews__subtitle {
     color: #555;
@@ -338,9 +356,11 @@ h1, h2, h3, .logo {
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     text-align: left;
+    width: 100%;
 }
 .form-group {
     margin-bottom: 20px;
+    width: 100%;
 }
 .form-group label {
     display: block;
@@ -384,6 +404,7 @@ h1, h2, h3, .logo {
     gap: 30px;
     max-width: 800px;
     margin: 0 auto;
+    width: 100%;
 }
 .price-card {
     background: #F5F0E8;
@@ -392,6 +413,7 @@ h1, h2, h3, .logo {
     border: 2px solid transparent;
     transition: all 0.4s ease;
     position: relative;
+    width: 100%;
 }
 .price-card:hover {
     transform: translateY(-5px);
@@ -448,6 +470,7 @@ h1, h2, h3, .logo {
     background: linear-gradient(135deg, #1F3A5F 0%, #2a4a70 100%);
     padding: 100px 0;
     color: #fff;
+    width: 100%;
 }
 .form-section .section-title { color: #fff; }
 .form-subtitle {
@@ -461,6 +484,7 @@ h1, h2, h3, .logo {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    width: 100%;
 }
 .form input,
 .form select {
@@ -469,6 +493,7 @@ h1, h2, h3, .logo {
     border: 2px solid transparent;
     font-size: 16px;
     transition: border-color 0.3s;
+    width: 100%;
 }
 .form input:focus,
 .form select:focus {
@@ -482,6 +507,7 @@ h1, h2, h3, .logo {
     background: #111;
     color: #aaa;
     padding: 50px 0;
+    width: 100%;
 }
 .footer__inner {
     display: flex;
@@ -489,6 +515,7 @@ h1, h2, h3, .logo {
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
+    width: 100%;
 }
 .footer__info p { margin: 4px 0; font-size: 14px; }
 .footer__info strong { color: #fff; }
@@ -571,8 +598,20 @@ h1, h2, h3, .logo {
     transform: translateY(0);
 }
 
-/* Адаптив */
+/* ========================================= */
+/* АДАПТИВ ДЛЯ ТЕЛЕФОНОВ */
+/* ========================================= */
 @media (max-width: 768px) {
+    /* Общие настройки */
+    .container {
+        padding: 0 15px;
+    }
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    /* Шапка */
     .header__inner {
         justify-content: space-between;
         flex-wrap: nowrap;
@@ -584,12 +623,12 @@ h1, h2, h3, .logo {
     .logo span {
         font-size: 12px;
     }
-    
     .burger {
         display: block;
         z-index: 101;
     }
     
+    /* Меню */
     .nav {
         position: fixed;
         top: 0;
@@ -618,17 +657,55 @@ h1, h2, h3, .logo {
         font-size: 16px;
         margin-left: 0;
     }
-    
+
+    /* Первый экран */
+    .hero {
+        padding: 50px 0;
+    }
     .hero__inner {
         flex-direction: column;
         text-align: center;
+        gap: 30px;
     }
     .hero__text h1 {
-        font-size: 30px;
+        font-size: 28px;
+        line-height: 1.2;
     }
+    .hero__subtitle {
+        font-size: 16px;
+    }
+    .hero__photo {
+        max-height: 350px;
+    }
+
+    /* Карточки */
+    .cards, .steps, .results__grid, .price-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .card, .step, .price-card {
+        padding: 25px 20px;
+    }
+    .step__num {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    /* Формы */
+    .review-form {
+        padding: 25px 20px;
+    }
+    .review-form input,
+    .review-form textarea {
+        font-size: 16px; /* Чтобы не было зума на iOS */
+    }
+
+    /* Подвал */
     .footer__inner {
         flex-direction: column;
         text-align: center;
+        gap: 15px;
     }
     .footer__contacts {
         flex-direction: column;
@@ -637,9 +714,11 @@ h1, h2, h3, .logo {
     .footer__links a {
         margin: 0 10px;
     }
+
+    /* Плавающие кнопки */
     .floating-contacts {
-        bottom: 20px;
-        right: 20px;
+        bottom: 15px;
+        right: 15px;
         gap: 10px;
     }
     .float-btn {

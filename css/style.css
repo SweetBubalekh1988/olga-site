@@ -35,6 +35,7 @@ h1, h2, h3, .logo {
     font-size: 16px;
     position: relative;
     overflow: hidden;
+    text-align: center;
 }
 .btn--primary {
     background: #E87A3E;
@@ -84,12 +85,19 @@ h1, h2, h3, .logo {
     font-size: 20px;
     font-weight: 700;
     text-decoration: none;
+    z-index: 101;
 }
 .logo span {
     font-size: 14px;
     font-weight: 400;
     color: #F5F0E8;
     display: block;
+}
+
+/* Навигация (десктоп) */
+.nav {
+    display: flex;
+    align-items: center;
 }
 .nav a {
     color: #F5F0E8;
@@ -111,6 +119,43 @@ h1, h2, h3, .logo {
 }
 .nav a:hover { color: #E87A3E; }
 .nav a:hover::after { width: 100%; }
+
+/* Кнопка в шапке */
+.btn--header {
+    padding: 10px 20px;
+    font-size: 15px;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+.btn--header::after { display: none; }
+
+/* Бургер-меню (скрыт на десктопе) */
+.burger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 101;
+}
+.burger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #F5F0E8;
+    margin: 5px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+.burger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+.burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
 
 /* Первый экран */
 .hero {
@@ -149,28 +194,18 @@ h1, h2, h3, .logo {
     margin-bottom: 30px;
     color: #444;
 }
-.hero__img { flex: 1; }
+.hero__img { flex: 1; display: flex; justify-content: center; align-items: center; }
 
 /* Стили для фото Ольги */
-.hero__img {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .hero__photo {
     max-width: 100%;
-    max-height: 500px; /* Ограничиваем высоту, чтобы не было гигантским */
+    max-height: 500px;
     width: auto;
     height: auto;
-    object-fit: contain; /* Показываем фото целиком, без обрезки */
+    object-fit: contain;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
     transition: transform 0.3s ease;
-}
-.hero__photo:hover {
-    transform: scale(1.02);
 }
 .hero__photo:hover {
     transform: scale(1.02);
@@ -282,6 +317,62 @@ h1, h2, h3, .logo {
     color: #F5F0E8;
 }
 
+/* Отзывы (форма) */
+.reviews {
+    padding: 100px 0;
+    background: #fff;
+}
+.reviews__subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+    font-size: 17px;
+}
+.review-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #F5F0E8;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #1F3A5F;
+    font-size: 15px;
+}
+.review-form input,
+.review-form textarea {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    transition: border-color 0.3s;
+    resize: vertical;
+}
+.review-form input:focus,
+.review-form textarea:focus {
+    outline: none;
+    border-color: #E87A3E;
+}
+.review-form button {
+    width: 100%;
+    margin-top: 10px;
+}
+.reviews__note {
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+    margin-top: 25px;
+}
+
 /* Цены */
 .prices { padding: 100px 0; }
 .price-cards {
@@ -349,7 +440,7 @@ h1, h2, h3, .logo {
     font-size: 15px;
 }
 
-/* Форма */
+/* Форма записи */
 .form-section {
     background: linear-gradient(135deg, #1F3A5F 0%, #2a4a70 100%);
     padding: 100px 0;
@@ -458,67 +549,77 @@ h1, h2, h3, .logo {
 
 /* Адаптив */
 @media (max-width: 768px) {
-    .hero__inner { flex-direction: column; text-align: center; }
-    .hero__text h1 { font-size: 32px; }
-    .nav { display: none; }
-    .footer__inner { flex-direction: column; text-align: center; }
-    .footer__links a { margin: 0 10px; }
-    .floating-contacts { bottom: 20px; right: 20px; gap: 10px; }
-    .float-btn { width: 50px; height: 50px; }
-    .float-btn svg { width: 20px; height: 20px; }
-}
-/* Отзывы (форма) */
-.reviews {
-    padding: 100px 0;
-    background: #fff;
-}
-.reviews__subtitle {
-    text-align: center;
-    color: #666;
-    margin-bottom: 40px;
-    font-size: 17px;
-}
-.review-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background: #F5F0E8;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-}
-.form-group {
-    margin-bottom: 20px;
-}
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #1F3A5F;
-    font-size: 15px;
-}
-.review-form input,
-.review-form textarea {
-    width: 100%;
-    padding: 14px;
-    border-radius: 10px;
-    border: 2px solid transparent;
-    font-size: 16px;
-    font-family: 'Open Sans', sans-serif;
-    transition: border-color 0.3s;
-    resize: vertical;
-}
-.review-form input:focus,
-.review-form textarea:focus {
-    outline: none;
-    border-color: #E87A3E;
-}
-.review-form button {
-    width: 100%;
-    margin-top: 10px;
-}
-.reviews__note {
-    text-align: center;
-    color: #888;
-    font-size: 14px;
-    margin-top: 25px;
+    .header__inner {
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+    .logo {
+        font-size: 16px;
+        z-index: 101;
+    }
+    .logo span {
+        font-size: 12px;
+    }
+    
+    .burger {
+        display: block;
+        z-index: 101;
+    }
+    
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background: #1F3A5F;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        transition: right 0.4s ease;
+        z-index: 100;
+        box-shadow: -5px 0 20px rgba(0,0,0,0.2);
+    }
+    .nav.active {
+        right: 0;
+    }
+    .nav a {
+        font-size: 18px;
+        margin: 0;
+    }
+    .btn--header {
+        padding: 12px 24px;
+        font-size: 16px;
+        margin-left: 0;
+    }
+    
+    .hero__inner {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero__text h1 {
+        font-size: 30px;
+    }
+    .footer__inner {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer__links a {
+        margin: 0 10px;
+    }
+    .floating-contacts {
+        bottom: 20px;
+        right: 20px;
+        gap: 10px;
+    }
+    .float-btn {
+        width: 50px;
+        height: 50px;
+    }
+    .float-btn svg {
+        width: 20px;
+        height: 20px;
+    }
 }

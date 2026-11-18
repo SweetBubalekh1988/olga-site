@@ -15,14 +15,12 @@
         <div class="container header__inner">
             <a href="#" class="logo">Ольга Знатнова <span>English & Deutsch</span></a>
             
-            <!-- Кнопка-бургер (видна только на телефоне) -->
             <button class="burger" id="burger" aria-label="Открыть меню">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
 
-            <!-- Навигация (на десктопе — в строку, на телефоне — выпадает) -->
             <nav class="nav" id="nav">
                 <a href="#audience" class="nav-link">Кому подойдёт</a>
                 <a href="#how" class="nav-link">Как проходят</a>
@@ -130,16 +128,14 @@
         </div>
     </section>
 
-    <!-- Отзывы (форма для отправки) -->
+    <!-- Отзывы (форма на Formspree) -->
     <section class="reviews" id="reviews">
         <div class="container">
             <h2 class="section-title reveal">Оставить отзыв</h2>
             <p class="reviews__subtitle reveal">Были на занятиях? Поделитесь впечатлениями — это поможет другим ученикам.</p>
             
-            <form class="review-form reveal" action="https://formsubmit.co/olga.znt2009@gmail.com" method="POST">
-                <input type="hidden" name="_subject" value="Новый отзыв с сайта (Ольга Знатнова)">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
+            <form class="review-form reveal" action="https://formspree.io/f/xbgoyqpq" method="POST">
+                <!-- Скрытое поле для перенаправления на страницу "Спасибо" -->
                 <input type="hidden" name="_next" value="thanks.html">
                 
                 <div class="form-group">
@@ -196,10 +192,7 @@
             <h2 class="section-title reveal">Записаться на бесплатное занятие</h2>
             <p class="form-subtitle reveal">Оставьте заявку — Ольга свяжется с вами в течение дня.</p>
             
-            <form class="form reveal" action="https://formsubmit.co/olga.znt2009@gmail.com" method="POST">
-                <input type="hidden" name="_subject" value="Новая заявка с сайта (Ольга Знатнова)">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
+            <form class="form reveal" action="https://formspree.io/f/xbgoyqpq" method="POST">
                 <input type="hidden" name="_next" value="thanks.html">
                 
                 <input type="text" name="name" placeholder="Ваше имя" required>
@@ -220,12 +213,20 @@
             <div class="footer__info">
                 <p><strong>Ольга Знатнова</strong> — репетитор английского и немецкого</p>
                 <p>Москва · онлайн</p>
-                <p><a href="tel:+79105293209">+7 910 529-32-09</a> · <a href="mailto:olga.znt2009@gmail.com">olga.znt2009@gmail.com</a></p>
+            </div>
+            <div class="footer__contacts">
+                <a href="tel:+79105293209" class="footer-contact-link">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    +7 910 529-32-09
+                </a>
+                <a href="mailto:olga.znt2009@gmail.com" class="footer-contact-link">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    olga.znt2009@gmail.com
+                </a>
             </div>
             <div class="footer__links">
                 <a href="https://wa.me/79105293209" target="_blank">WhatsApp</a>
                 <a href="https://t.me/+79105293209" target="_blank">Telegram</a>
-                <a href="mailto:olga.znt2009@gmail.com">Email</a>
             </div>
         </div>
     </footer>

@@ -135,7 +135,8 @@
             <p class="reviews__subtitle reveal">Были на занятиях? Поделитесь впечатлениями — это поможет другим ученикам.</p>
             
             <form class="review-form reveal" action="https://formspree.io/f/xbgoyqpq" method="POST">
-                <!-- Скрытое поле для перенаправления на страницу "Спасибо" -->
+                <!-- Уникальная тема для отзыва -->
+                <input type="hidden" name="_subject" value="Новый отзыв с сайта">
                 <input type="hidden" name="_next" value="thanks.html">
                 
                 <div class="form-group">
@@ -193,6 +194,8 @@
             <p class="form-subtitle reveal">Оставьте заявку — Ольга свяжется с вами в течение дня.</p>
             
             <form class="form reveal" action="https://formspree.io/f/xbgoyqpq" method="POST">
+                <!-- Уникальная тема для заявки -->
+                <input type="hidden" name="_subject" value="Новая заявка на занятие">
                 <input type="hidden" name="_next" value="thanks.html">
                 
                 <input type="text" name="name" placeholder="Ваше имя" required>

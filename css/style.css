@@ -7,7 +7,7 @@ body {
     color: #2c2c2c;
     line-height: 1.6;
     background: #fff;
-    overflow-x: hidden; /* Запрещаем горизонтальную прокрутку */
+    overflow-x: hidden;
     width: 100%;
 }
 

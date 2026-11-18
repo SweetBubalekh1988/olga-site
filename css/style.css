@@ -515,4 +515,269 @@ h1, h2, h3, .logo {
     stroke: #E87A3E;
 }
 .footer__links a {
-    color: #E
+    color: #E87A3E;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+.footer__links a:hover { color: #fff; }
+
+/* Плавающие кнопки связи */
+.floating-contacts {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 999;
+}
+.float-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    animation: pulse-glow 2s infinite;
+}
+.float-btn--wa { background-color: #25D366; }
+.float-btn--tg { background-color: #0088cc; }
+.float-btn:hover {
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+}
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 0 0 rgba(232, 122, 62, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(232, 122, 62, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(232, 122, 62, 0); }
+}
+.float-btn--wa { animation-delay: 0s; }
+.float-btn--tg { animation-delay: 0.5s; }
+
+/* Анимация появления (Reveal) */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    align-items: center;
+    justify-content: center;
+}
+.modal.active {
+    display: flex;
+}
+.modal-content {
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #888;
+    transition: color 0.3s;
+}
+.modal-close:hover {
+    color: #E87A3E;
+}
+.modal-content h3 {
+    margin-bottom: 25px;
+    color: #1F3A5F;
+    font-size: 22px;
+}
+.modal-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.modal-buttons .btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+}
+
+/* Кнопки для мессенджеров */
+.btn--wa {
+    background: #25D366;
+    color: #fff;
+}
+.btn--wa:hover {
+    background: #1da851;
+}
+.btn--tg {
+    background: #0088cc;
+    color: #fff;
+}
+.btn--tg:hover {
+    background: #006699;
+}
+.btn--email {
+    background: #E87A3E;
+    color: #fff;
+}
+.btn--email:hover {
+    background: #d06a30;
+}
+
+/* ========================================= */
+/* АДАПТИВ ДЛЯ ТЕЛЕФОНОВ */
+/* ========================================= */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    /* Шапка и бургер */
+    .header__inner {
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+    .logo {
+        font-size: 16px;
+        z-index: 101;
+    }
+    .logo span {
+        font-size: 12px;
+    }
+    .burger {
+        display: block;
+        z-index: 101;
+    }
+    
+    /* Меню */
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background: #1F3A5F;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        transition: right 0.4s ease;
+        z-index: 100;
+        box-shadow: -5px 0 20px rgba(0,0,0,0.2);
+        display: flex;
+    }
+    .nav.active {
+        right: 0;
+    }
+    .nav a {
+        font-size: 18px;
+        margin: 0;
+    }
+    .btn--header {
+        padding: 12px 24px;
+        font-size: 16px;
+        margin-left: 0;
+    }
+
+    /* Первый экран */
+    .hero {
+        padding: 50px 0;
+    }
+    .hero__inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    .hero__text h1 {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+    .hero__subtitle {
+        font-size: 16px;
+    }
+    .hero__photo {
+        max-height: 350px;
+        width: auto;
+    }
+
+    /* Карточки, шаги, цены */
+    .cards, .steps, .results__grid, .price-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .card, .step, .price-card {
+        padding: 25px 20px;
+    }
+    .step__num {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    /* Формы */
+    .review-form {
+        padding: 25px 20px;
+    }
+    .review-form input,
+    .review-form textarea {
+        font-size: 16px;
+    }
+
+    /* Подвал */
+    .footer__inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    .footer__contacts {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .footer__links a {
+        margin: 0 10px;
+    }
+
+    /* Плавающие кнопки */
+    .floating-contacts {
+        bottom: 15px;
+        right: 15px;
+        gap: 10px;
+    }
+    .float-btn {
+        width: 50px;
+        height: 50px;
+    }
+    .float-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+}

@@ -135,7 +135,6 @@
             <p class="reviews__subtitle reveal">Были на занятиях? Поделитесь впечатлениями — это поможет другим ученикам.</p>
             
             <form class="review-form reveal" action="https://formspree.io/f/xbgoyqpq" method="POST">
-                <!-- Уникальная тема для отзыва -->
                 <input type="hidden" name="_subject" value="Новый отзыв с сайта">
                 <input type="hidden" name="_next" value="thanks.html">
                 
@@ -191,24 +190,33 @@
     <section class="form-section" id="form">
         <div class="container">
             <h2 class="section-title reveal">Записаться на бесплатное занятие</h2>
-            <p class="form-subtitle reveal">Оставьте заявку — Ольга свяжется с вами в течение дня.</p>
+            <p class="form-subtitle reveal">Заполните форму и выберите, куда отправить заявку.</p>
             
-            <form class="form reveal" action="https://formspree.io/f/xbgoyqpq" method="POST">
-                <!-- Уникальная тема для заявки -->
-                <input type="hidden" name="_subject" value="Новая заявка на занятие">
-                <input type="hidden" name="_next" value="thanks.html">
-                
-                <input type="text" name="name" placeholder="Ваше имя" required>
-                <input type="tel" name="phone" placeholder="Телефон или WhatsApp" required>
-                <select name="interest">
-                    <option value="adult">Взрослый</option>
-                    <option value="kid">Ребёнок</option>
-                    <option value="oge">Подготовка к ОГЭ</option>
+            <form class="form reveal" id="bookingForm">
+                <input type="text" name="name" id="booking-name" placeholder="Ваше имя" required>
+                <input type="tel" name="phone" id="booking-phone" placeholder="Телефон или WhatsApp" required>
+                <select name="interest" id="booking-interest">
+                    <option value="Взрослый">Взрослый</option>
+                    <option value="Ребёнок">Ребёнок</option>
+                    <option value="Подготовка к ОГЭ">Подготовка к ОГЭ</option>
                 </select>
                 <button type="submit" class="btn btn--primary btn--pulse">Отправить</button>
             </form>
         </div>
     </section>
+
+    <!-- Модальное окно выбора способа отправки -->
+    <div class="modal" id="sendModal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <h3>Куда отправить заявку?</h3>
+            <div class="modal-buttons">
+                <button class="btn btn--wa" id="modal-wa">Отправить в WhatsApp</button>
+                <button class="btn btn--tg" id="modal-tg">Отправить в Telegram</button>
+                <button class="btn btn--email" id="modal-email">Отправить на почту</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Подвал -->
     <footer class="footer" id="contacts">

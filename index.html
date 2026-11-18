@@ -14,14 +14,23 @@
     <header class="header" id="header">
         <div class="container header__inner">
             <a href="#" class="logo">Ольга Знатнова <span>English & Deutsch</span></a>
-            <nav class="nav">
+            
+            <!-- Кнопка-бургер (видна только на телефоне) -->
+            <button class="burger" id="burger" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Навигация (на десктопе — в строку, на телефоне — выпадает) -->
+            <nav class="nav" id="nav">
                 <a href="#audience" class="nav-link">Кому подойдёт</a>
                 <a href="#how" class="nav-link">Как проходят</a>
                 <a href="#reviews" class="nav-link">Отзывы</a>
                 <a href="#prices" class="nav-link">Цены</a>
                 <a href="#contacts" class="nav-link">Контакты</a>
+                <a href="#form" class="btn btn--primary nav-link btn--header">Записаться</a>
             </nav>
-            <a href="#form" class="btn btn--primary nav-link">Записаться</a>
         </div>
     </header>
 
